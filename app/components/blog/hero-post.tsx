@@ -2,6 +2,9 @@ import Avatar from './avatar'
 import DateFormatter from './date-formatter'
 import CoverImage from './cover-image'
 import Link from 'next/link'
+import { Dispatch } from "redux"
+import { useSelector, shallowEqual, useDispatch } from "react-redux"
+import { CryptoState, ICrypto } from '../../context/models/crypto'
 
 export default function HeroPost({
   title,
@@ -11,6 +14,13 @@ export default function HeroPost({
   author,
   slug,
 }) {
+
+  const articles: readonly ICrypto[] = useSelector(
+    (state: CryptoState) => state.cryptos,
+    shallowEqual
+  )
+
+  const dispatch: Dispatch<any> = useDispatch()
   return (
     <section>
       <div className="mb-8 md:mb-16">

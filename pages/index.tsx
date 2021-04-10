@@ -6,13 +6,15 @@ import Layout from '../app/components/blog/layout'
 import { getAllPosts } from '../app/lib/api'
 import Head from 'next/head'
 import { SITE_NAME } from '../app/lib/constants'
+import { Provider } from 'react-redux'
+import store from './../app/context/store'
 
 export default function Index({ allPosts }) {
   const heroPost = allPosts[0]
   const morePosts = allPosts.slice(1)
   return (
-    <>
-      <Layout>
+    <Provider store={store}>
+      <Layout preview={false}>
         <Head>
           <title>{SITE_NAME} - Cryptocurrency Blog | Noticias | Análisis</title>
         </Head>
@@ -31,7 +33,7 @@ export default function Index({ allPosts }) {
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
       </Layout>
-    </>
+    </Provider>
   )
 }
 
