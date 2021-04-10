@@ -1,15 +1,15 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import Container from '../../components/container'
-import PostBody from '../../components/post-body'
-import Header from '../../components/header'
-import PostHeader from '../../components/post-header'
-import Layout from '../../components/layout'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
-import PostTitle from '../../components/post-title'
+import Container from '../../app/components/blog/container'
+import PostBody from '../../app/components/blog/post-body'
+import Header from '../../app/components/blog/header'
+import PostHeader from '../../app/components/blog/post-header'
+import Layout from '../../app/components/blog/layout'
+import PostTitle from '../../app/components/blog/post-title'
 import Head from 'next/head'
-import { CMS_NAME } from '../../lib/constants'
-import markdownToHtml from '../../lib/markdownToHtml'
+import { getPostBySlug, getAllPosts } from '../../app/lib/api'
+import markdownToHtml from '../../app/lib/markdownToHtml'
+import { CMS_NAME } from '../../app/lib/constants'
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter()
@@ -70,7 +70,6 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const posts = getAllPosts(['slug'])
-
   return {
     paths: posts.map((post) => {
       return {
