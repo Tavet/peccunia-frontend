@@ -1,6 +1,6 @@
 import markdownStyles from './markdown-styles.module.scss'
 
-export default function PostBody({ content }) {
+export default function PostBody({ content }: { content: any }) {
   return (
     <div className="max-w-2xl mx-auto">
       <div

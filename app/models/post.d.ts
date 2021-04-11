@@ -9,11 +9,11 @@ export type Post = {
 
 }
 
-type Author = {
+export type Author = {
     name: string,
     picture: string
 }
 
-type OgImage = {
+export type OgImage = {
     url: string
 }

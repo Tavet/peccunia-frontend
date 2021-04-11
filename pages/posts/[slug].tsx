@@ -1,18 +1,22 @@
+// Next.js
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
+import Head from 'next/head'
+
+// Modules
 import Container from '../../app/components/modules/blog/container'
 import PostBody from '../../app/components/modules/blog/post-body'
 import Header from '../../app/components/modules/blog/header'
 import PostHeader from '../../app/components/modules/blog/post-header'
 import Layout from '../../app/components/modules/blog/layout'
 import PostTitle from '../../app/components/modules/blog/post-title'
-import Head from 'next/head'
+
+// Lib
 import { getPostBySlug, getAllPosts } from '../../app/lib/api'
 import markdownToHtml from '../../app/lib/markdownToHtml'
 import { CMS_NAME } from '../../app/lib/constants'
-import { Post } from '../../app/models/post'
 
-export default function Post({ post, morePosts, preview }: { post: any }) {
+export default function Post({ post, preview }: { post: any, preview: boolean }) {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />

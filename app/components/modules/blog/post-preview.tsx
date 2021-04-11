@@ -2,6 +2,7 @@ import Avatar from './avatar'
 import DateFormatter from './date-formatter'
 import CoverImage from './cover-image'
 import Link from 'next/link'
+import { Author } from '../../../models/post'
 
 export default function PostPreview({
   title,
@@ -10,7 +11,7 @@ export default function PostPreview({
   excerpt,
   author,
   slug,
-}) {
+}: { title: string, coverImage: string, date: string, excerpt: string, author: Author, slug: string }) {
   return (
     <div>
       <div className="mb-5">

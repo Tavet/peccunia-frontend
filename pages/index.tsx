@@ -5,13 +5,13 @@ import HomePage from '../app/components/templates/homepage'
 import { getAllPosts } from '../app/lib/api'
 
 // Models
-import { Post } from "../app/models/post"
+//import { Post } from "../app/models/post"
 
 // Redux
 import { Provider } from 'react-redux'
 import store from './../app/context/store'
 
-export default function Index({ allPosts }: { allPosts: Post[] }) {
+export default function Index() {
   return (
     <Provider store={store}>
       <HomePage />

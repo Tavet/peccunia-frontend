@@ -1,8 +1,10 @@
-import cn from 'classnames'
 import Link from 'next/link'
 import Image from 'next/image'
 
-export default function CoverImage({ title, src, slug, height, width }) {
+// @ts-ignore
+import cn from 'classnames'
+
+export default function CoverImage({ title, src, slug, height, width }: { title: string, src: string, slug?: string, height: number, width: number }) {
   const image = (
     <Image
       src={src}

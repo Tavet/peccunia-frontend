@@ -1,8 +1,10 @@
 import Container from './container'
-import cn from 'classnames'
 import { EXAMPLE_PATH } from '../../../lib/constants'
 
-export default function Alert({ preview }) {
+// @ts-ignore
+import cn from 'classnames'
+
+export default function Alert({ preview }: { preview: boolean }) {
   return (
     <div
       className={cn('border-b', {

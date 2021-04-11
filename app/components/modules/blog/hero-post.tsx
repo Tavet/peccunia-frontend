@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { CryptoAction, DispatchType as CryptoDispatchType } from '../../../context/models/crypto'
 import { cryptosFetchData } from '../../../context/creators/crypto.creators'
 import { useEffect } from 'react';
-import { Post } from '../../../models/Post';
+import { Post } from '../../../models/post';
 
 const HeroPost = ({ post, fetchData }: { post: Post, fetchData: () => void }) => {
 

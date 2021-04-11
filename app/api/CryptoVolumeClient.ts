@@ -1,23 +1,23 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
 axios.defaults.headers.common.Accept = 'application/json';
 axios.defaults.timeout = 12000;
 
-const getHttpHeaders = (isAuthenticated = true): AxiosRequestConfig => {
-    if (isAuthenticated) {
-        return {
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Headers': '*',
-                Apikey: 'd6df8f92f6e494fb1ae92a4672b2f68b9d548986ef869911fd781ada322796e0',
-            },
-        };
-    }
+// const getHttpHeaders = (isAuthenticated = true): AxiosRequestConfig => {
+//     if (isAuthenticated) {
+//         return {
+//             headers: {
+//                 'Access-Control-Allow-Origin': '*',
+//                 'Access-Control-Allow-Headers': '*',
+//                 Apikey: 'd6df8f92f6e494fb1ae92a4672b2f68b9d548986ef869911fd781ada322796e0',
+//             },
+//         };
+//     }
 
-    return {};
-};
+//     return {};
+// }; 
 
-const get24HVolume = (path: string = "/data/top/totalvolfull?limit=10&tsym=USD"): Promise<AxiosResponse> => new Promise((resolve, reject) => {
+const get24HVolume = (): Promise<AxiosResponse> => new Promise((resolve) => {
     resolve({
         data: JSON.parse(mockData),
         status: 200,
