@@ -4,8 +4,6 @@ import { DispatchType as CryptoState } from './models/crypto'
 import crypto from './reducer/crypto.reducer'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-
-
 export interface RootState {
     crypto: CryptoState
 }

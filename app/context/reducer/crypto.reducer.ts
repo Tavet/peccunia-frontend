@@ -1,23 +1,13 @@
 import { combineReducers } from 'redux'
 
 import * as actionTypes from "../actions/crypto.action"
-import { CryptoState, CryptoAction, ICrypto, DispatchType } from "../models/crypto"
+import { CryptoState, CryptoAction, DispatchType } from "../models/crypto"
 
 const initialState: CryptoState = {
     cryptos: [
-        {
-            id: 1,
-            title: "post 1",
-            body:
-                "Quisque cursus, metus vitae pharetra Nam libero tempore, cum soluta nobis est eligendi",
-        },
-        {
-            id: 2,
-            title: "post 2",
-            body:
-                "Harum quidem rerum facilis est et expedita distinctio quas molestias excepturi sint",
-        },
     ],
+    hasErrored: false,
+    isLoading: false
 }
 
 const reducer = (
@@ -25,23 +15,20 @@ const reducer = (
     action: CryptoAction
 ): CryptoState => {
     switch (action.type) {
-        case actionTypes.ADD_ARTICLE:
-            const newArticle: ICrypto = {
-                id: Math.random(), // not really unique
-                title: action.crypto.title,
-                body: action.crypto.body,
-            }
+        case actionTypes.GET_TOP_CRYPTOS_LOADING:
             return {
                 ...state,
-                cryptos: state.cryptos.concat(newArticle),
+                isLoading: action.isLoading || false
             }
-        case actionTypes.REMOVE_ARTICLE:
-            const updatedArticles: ICrypto[] = state.cryptos.filter(
-                article => article.id !== action.crypto.id
-            )
+        case actionTypes.GET_TOP_CRYPTOS_ERROR:
             return {
                 ...state,
-                cryptos: updatedArticles,
+                hasErrored: action.hasErrored || false,
+            }
+        case actionTypes.GET_TOP_CRYPTOS_SUCCESS:
+            return {
+                ...state,
+                cryptos: action.cryptos || []
             }
     }
     return state

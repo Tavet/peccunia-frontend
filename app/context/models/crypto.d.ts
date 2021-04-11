@@ -1,16 +1,22 @@
 export interface ICrypto {
     id: number
-    title: string
-    body: string
+    name: string
+    fullName: string
+    price: string
 }
 
 export type CryptoState = {
-    cryptos: ICrypto[]
+    cryptos: any,
+    hasErrored: boolean,
+    isLoading: boolean
 }
 
 export type CryptoAction = {
     type: string
-    crypto: ICrypto
+    crypto?: ICrypto
+    cryptos?: any
+    hasErrored?: boolean
+    isLoading?: boolean
 }
 
 export type DispatchType = (args: CryptoAction) => CryptoAction

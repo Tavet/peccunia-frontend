@@ -2,25 +2,25 @@ import Avatar from './avatar'
 import DateFormatter from './date-formatter'
 import CoverImage from './cover-image'
 import Link from 'next/link'
-import { Dispatch } from "redux"
-import { useSelector, shallowEqual, useDispatch } from "react-redux"
-import { CryptoState, ICrypto } from '../../context/models/crypto'
+import { connect } from 'react-redux';
+import { CryptoAction, DispatchType as CryptoDispatchType } from '../../context/models/crypto'
+import { cryptosFetchData } from '../../context/creators/crypto.creators'
+import { useEffect } from 'react';
 
-export default function HeroPost({
+const HeroPost = ({
   title,
   coverImage,
   date,
   excerpt,
   author,
   slug,
-}) {
+  fetchData
+}) => {
 
-  const articles: readonly ICrypto[] = useSelector(
-    (state: CryptoState) => state.cryptos,
-    shallowEqual
-  )
+  useEffect(() => {
+    fetchData()
+  })
 
-  const dispatch: Dispatch<any> = useDispatch()
   return (
     <section>
       <div className="mb-8 md:mb-16">
@@ -51,3 +51,19 @@ export default function HeroPost({
     </section>
   )
 }
+
+const mapStateToProps = (state: CryptoAction) => {
+  return {
+    cryptos: state.cryptos,
+    hasErrored: state.hasErrored,
+    isLoading: state.isLoading
+  };
+};
+
+const mapDispatchToProps = (dispatch: CryptoDispatchType) => {
+  return {
+    fetchData: () => dispatch(cryptosFetchData())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeroPost);
