@@ -3,8 +3,6 @@ import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 axios.defaults.headers.common.Accept = 'application/json';
 axios.defaults.timeout = 12000;
 
-const BASE_URL = "https://min-api.cryptocompare.com"
-
 const getHttpHeaders = (isAuthenticated = true): AxiosRequestConfig => {
     if (isAuthenticated) {
         return {
