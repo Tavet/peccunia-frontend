@@ -1,6 +1,5 @@
 // Templates
-import HomePage from '../app/components/templates/homepage/HomePage'
-import Blog from '../app/components/templates/blog/Blog'
+import HomePage from '../app/components/templates/homepage'
 
 // Lib
 import { getAllPosts } from '../app/lib/api'
