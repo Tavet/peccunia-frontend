@@ -32,7 +32,6 @@ export const cryptosFetchData = (): any => {
         dispatch(actionTypes.cryptosIsLoading(true));
         CryptoVolumeClient.get24HVolume()
             .then((response) => {
-                console.log("response", response)
                 if (response.status != 200) {
                     throw Error(response.statusText);
                 }
@@ -41,9 +40,6 @@ export const cryptosFetchData = (): any => {
             })
             .then((response) => response.data)
             .then((items) => dispatch(actionTypes.cryptosFetchDataSuccess(items)))
-            .catch((err) => {
-                console.log("ERROR", err)
-                return dispatch(actionTypes.cryptosHasErrored(true))
-            });
+            .catch(() => dispatch(actionTypes.cryptosHasErrored(true)));
     };
 }

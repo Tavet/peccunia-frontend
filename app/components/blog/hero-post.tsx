@@ -6,16 +6,9 @@ import { connect } from 'react-redux';
 import { CryptoAction, DispatchType as CryptoDispatchType } from '../../context/models/crypto'
 import { cryptosFetchData } from '../../context/creators/crypto.creators'
 import { useEffect } from 'react';
+import { Post } from '../../models/Post';
 
-const HeroPost = ({
-  title,
-  coverImage,
-  date,
-  excerpt,
-  author,
-  slug,
-  fetchData
-}) => {
+const HeroPost = ({ post, fetchData }: { post: Post, fetchData: () => void }) => {
 
   useEffect(() => {
     fetchData()
@@ -25,9 +18,9 @@ const HeroPost = ({
     <section>
       <div className="mb-8 md:mb-16">
         <CoverImage
-          title={title}
-          src={coverImage}
-          slug={slug}
+          title={post.title}
+          src={post.coverImage}
+          slug={post.slug}
           height={620}
           width={1240}
         />
@@ -35,17 +28,17 @@ const HeroPost = ({
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
         <div>
           <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
-            <Link as={`/posts/${slug}`} href="/posts/[slug]">
-              <a className="hover:underline">{title}</a>
+            <Link as={`/posts/${post.slug}`} href="/posts/[slug]">
+              <a className="hover:underline">{post.title}</a>
             </Link>
           </h3>
           <div className="mb-4 md:mb-0 text-lg">
-            <DateFormatter dateString={date} />
+            <DateFormatter dateString={post.date} />
           </div>
         </div>
         <div>
-          <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-          <Avatar name={author.name} picture={author.picture} />
+          <p className="text-lg leading-relaxed mb-4">{post.excerpt}</p>
+          <Avatar name={post.author.name} picture={post.author.picture} />
         </div>
       </div>
     </section>

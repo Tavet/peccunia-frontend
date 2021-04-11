@@ -1,9 +1,12 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import { DispatchType as CryptoState } from './models/crypto'
-import crypto from './reducer/crypto.reducer'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
+import { DispatchType as CryptoState } from './models/crypto'
 
+// Reducers
+import crypto from './reducer/crypto.reducer'
+
+// States aka Dispatch Type
 export interface RootState {
     crypto: CryptoState
 }

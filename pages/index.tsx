@@ -8,9 +8,10 @@ import Head from 'next/head'
 import { SITE_NAME } from '../app/lib/constants'
 import { Provider } from 'react-redux'
 import store from './../app/context/store'
+import { Post } from "../app/models/Post"
 
-export default function Index({ allPosts }) {
-  const heroPost = allPosts[0]
+export default function Index({ allPosts }: { allPosts: Post[] }) {
+  const heroPost: Post = allPosts[0]
   const morePosts = allPosts.slice(1)
   return (
     <Provider store={store}>
@@ -22,12 +23,7 @@ export default function Index({ allPosts }) {
           <Intro />
           {heroPost && (
             <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
+              post={heroPost}
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
