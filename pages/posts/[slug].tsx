@@ -1,17 +1,18 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import Container from '../../app/components/blog/container'
-import PostBody from '../../app/components/blog/post-body'
-import Header from '../../app/components/blog/header'
-import PostHeader from '../../app/components/blog/post-header'
-import Layout from '../../app/components/blog/layout'
-import PostTitle from '../../app/components/blog/post-title'
+import Container from '../../app/components/modules/blog/container'
+import PostBody from '../../app/components/modules/blog/post-body'
+import Header from '../../app/components/modules/blog/header'
+import PostHeader from '../../app/components/modules/blog/post-header'
+import Layout from '../../app/components/modules/blog/layout'
+import PostTitle from '../../app/components/modules/blog/post-title'
 import Head from 'next/head'
 import { getPostBySlug, getAllPosts } from '../../app/lib/api'
 import markdownToHtml from '../../app/lib/markdownToHtml'
 import { CMS_NAME } from '../../app/lib/constants'
+import { Post } from '../../app/models/post'
 
-export default function Post({ post, morePosts, preview }) {
+export default function Post({ post, morePosts, preview }: { post: any }) {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
@@ -46,7 +47,7 @@ export default function Post({ post, morePosts, preview }) {
   )
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: any }) {
   const post = getPostBySlug(params.slug, [
     'title',
     'date',

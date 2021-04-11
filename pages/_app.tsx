@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import * as gtag from "../app/lib/gtags";
+import 'semantic-ui-css/semantic.min.css'
 import '../app/styles/app.scss'
 
 const App = ({ Component, pageProps }: AppProps) => {

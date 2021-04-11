@@ -1,10 +1,15 @@
+@import "./export.scss";
+
 @tailwind base;
 
 /* Write your own custom base styles here */
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
-@import 'abstracts/functions';
-@import 'base/typography';
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
 
 /* Start purging... */
 @tailwind components;

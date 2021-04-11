@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import { CMS_NAME, HOME_OG_IMAGE_URL } from '../../lib/constants'
-import { GA_TRACKING_ID } from "../../lib/gtags";
+import { CMS_NAME, HOME_OG_IMAGE_URL } from '../../../lib/constants'
+import { GA_TRACKING_ID } from "../../../lib/gtags";
 
 export default function Meta() {
   return (
