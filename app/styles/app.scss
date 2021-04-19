@@ -1,14 +1,27 @@
-@import "./export.scss";
-
 @tailwind base;
 
 /* Write your own custom base styles here */
+@import "./base/base";
+@import "./base/typography";
+@import "./abstracts/mixins";
 
 html,
-body {
-    margin: 0;
-    padding: 0;
-    border: 0;
+body,
+body > div:first-child,
+div#__next,
+div#__next > div.fresnel-container,
+div#__next > div.fresnel-container > div {
+    @include breakpoint(phablet) {
+        height: 100%;
+    }
+
+    @include breakpoint(mobileonly) {
+        height: auto;
+    }
+}
+
+.ui.button {
+    border-radius:50px !important;
 }
 
 /* Start purging... */

@@ -8,8 +8,11 @@ import {
     Menu,
     Segment,
     Sidebar,
+    Grid,
     Visibility,
 } from 'semantic-ui-react'
+import styles from "./HomePage.module.scss"
+import Image from 'next/image'
 
 // Modules
 import ResponsiveNav from "../../modules/nav";
@@ -37,9 +40,8 @@ const DesktopContainer = ({ children }: { children: any }) => {
                 onBottomPassedReverse={() => setFixed(false)}
             >
                 <Segment
-                    inverted
                     textAlign='center'
-                    style={{ minHeight: 700, padding: '1em 0em' }}
+                    className={styles.headerHome}
                     vertical
                 >
                     <ResponsiveNav.DesktopNav fixed={fixed}></ResponsiveNav.DesktopNav>
@@ -53,33 +55,31 @@ const DesktopContainer = ({ children }: { children: any }) => {
 }
 
 const HomepageHeading = ({ mobile = false }: { mobile?: boolean }) => (
-    <Container text>
-        <Header
-            as='h1'
-            content='Peccunia'
-            inverted
-            style={{
-                fontSize: mobile ? '2em' : '4em',
-                fontWeight: 'normal',
-                marginBottom: 0,
-                marginTop: mobile ? '1.5em' : '3em',
-            }}
-        />
-        <Header
-            as='h2'
-            content='Cryptocurrency portal en Español'
-            inverted
-            style={{
-                fontSize: mobile ? '1.5em' : '1.7em',
-                fontWeight: 'normal',
-                marginTop: mobile ? '0.2em' : '0.2em',
-                marginBottom: '1em',
-            }}
-        />
-        <Button primary size='huge'>
-            Get Started
-        <Icon name='arrow right' />
-        </Button>
+    <Container fluid className={styles.homepageHeading}>
+        <Grid columns={2} stackable>
+            <Grid.Row className={styles.headerRow}>
+                <Grid.Column className={styles.headerHomePeccunia}>
+                    <div className={styles.headerHomeTitle}>
+                        <Header
+                            as='h1'
+                            content='Peccunia'
+                        />
+                    </div>
+                    <Header
+                        as='h2'
+                        content='Potencializa y planea tu portafolio de Criptomonedas'
+                        className={styles.headerHomeSubtitle}
+                    />
+                    <Button primary size='huge'>
+                        Planear ahora <Icon name='arrow right' />
+                    </Button>
+                </Grid.Column>
+                {!mobile &&
+                    <Grid.Column><img src="/assets/vectors/home-header.svg" alt="Ilustración"
+                        className={styles.headerHomeIllustration} width="100%" height="auto" /></Grid.Column>
+                }
+            </Grid.Row>
+        </Grid>
     </Container>
 )
 
@@ -97,23 +97,19 @@ const MobileContainer = ({ children }: { children: any }) => {
 
                 <Sidebar.Pusher dimmed={sidebarOpened}>
                     <Segment
-                        inverted
                         textAlign='center'
                         style={{ minHeight: 350, padding: '1em 0em' }}
                         vertical
                     >
                         <Container>
-                            <Menu inverted pointing secondary size='large'>
+                            <Menu pointing secondary size='large'>
                                 <Menu.Item onClick={() => setSidebarOpened(true)}>
                                     <Icon name='sidebar' />
                                 </Menu.Item>
                                 <Menu.Item position='right'>
-                                    <Button as='a' inverted>
-                                        Log in
-                      </Button>
-                                    <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
-                                        Sign Up
-                      </Button>
+                                    <Button as='a'>
+                                        Mi perfil
+                                    </Button>
                                 </Menu.Item>
                             </Menu>
                         </Container>

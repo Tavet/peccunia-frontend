@@ -2,17 +2,9 @@ import Avatar from './avatar'
 import DateFormatter from './date-formatter'
 import CoverImage from './cover-image'
 import Link from 'next/link'
-import { connect } from 'react-redux';
-import { CryptoAction, DispatchType as CryptoDispatchType } from '../../../context/models/crypto'
-import { cryptosFetchData } from '../../../context/creators/crypto.creators'
-import { useEffect } from 'react';
 import { Post } from '../../../models/post';
 
-const HeroPost = ({ post, fetchData }: { post: Post, fetchData: () => void }) => {
-
-  useEffect(() => {
-    fetchData()
-  })
+const HeroPost = ({ post }: { post: Post}) => {
 
   return (
     <section>
@@ -45,18 +37,4 @@ const HeroPost = ({ post, fetchData }: { post: Post, fetchData: () => void }) =>
   )
 }
 
-const mapStateToProps = (state: CryptoAction) => {
-  return {
-    cryptos: state.cryptos,
-    hasErrored: state.hasErrored,
-    isLoading: state.isLoading
-  };
-};
-
-const mapDispatchToProps = (dispatch: CryptoDispatchType) => {
-  return {
-    fetchData: () => dispatch(cryptosFetchData())
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(HeroPost);
+export default HeroPost;
