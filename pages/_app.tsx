@@ -4,11 +4,14 @@ import { useRouter } from "next/router";
 import * as gtag from "../app/lib/gtags";
 import 'semantic-ui-css/semantic.min.css'
 import '../app/styles/app.scss'
+import interceptRequests from "../app/api/ApiInterceptor"
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
-
+  interceptRequests()
+  
   useEffect(() => {
+      interceptRequests()
       const handleRouteChange = (url: URL) => {
           gtag.pageview(url);
       };
