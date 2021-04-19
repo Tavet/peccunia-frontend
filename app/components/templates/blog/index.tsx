@@ -9,7 +9,7 @@ import Layout from '../../modules/blog/layout'
 import { SITE_NAME } from '../../../lib/constants'
 
 // Models
-import { Post } from "../../../models/post"
+import { Post } from "../../../context/models/post"
 
 // Next
 import Head from 'next/head'

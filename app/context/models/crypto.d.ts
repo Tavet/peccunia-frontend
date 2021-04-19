@@ -1,8 +1,15 @@
-export interface ICrypto {
-    id: number
+export interface Crypto {
     name: string
     fullName: string
-    price: string
+    fiatInfo: FiatInfo
+}
+
+export interface FiatInfo {
+    price: number
+    volume24hour: number
+    marketCap: number
+    supply: number
+    maxSupply: number
 }
 
 export type CryptoState = {
@@ -13,8 +20,8 @@ export type CryptoState = {
 
 export type CryptoAction = {
     type: string
-    crypto?: ICrypto
-    cryptos?: any
+    crypto?: Crypto
+    cryptos?: Crypto[]
     hasErrored?: boolean
     isLoading?: boolean
 }

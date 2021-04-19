@@ -2,7 +2,7 @@ import Avatar from './avatar'
 import DateFormatter from './date-formatter'
 import CoverImage from './cover-image'
 import Link from 'next/link'
-import { Post } from '../../../models/post';
+import { Post } from '../../../context/models/post';
 
 const HeroPost = ({ post }: { post: Post}) => {
 

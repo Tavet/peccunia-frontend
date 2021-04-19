@@ -1,4 +1,4 @@
-import { Post } from '../../../models/post'
+import { Post } from '../../../context/models/post'
 import PostPreview from './post-preview'
 
 export default function MoreStories({ posts }: { posts: Post[] }) {
