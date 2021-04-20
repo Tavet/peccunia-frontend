@@ -13,8 +13,7 @@ export const cryptosFetchData = (): any => {
                 dispatch(actionTypes.cryptosIsLoading(false));
                 return response;
             })
-            .then((response) => {console.log(response) 
-                return response.data})
+            .then((response) => response.data)
             .then((items) => dispatch(actionTypes.cryptosFetchDataSuccess(items.data)))
             .catch(() => dispatch(actionTypes.cryptosHasErrored(true)));
     };

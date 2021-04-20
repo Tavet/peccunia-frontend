@@ -1,6 +1,6 @@
 // Modules
 import Footer from "../../modules/footer"
-import Top10Volume from "../../modules/cryptos"
+import TopCryptosBy from "../../modules/cryptos"
 
 // UI
 import {
@@ -23,8 +23,7 @@ const HomePage = () => {
         <ResponsiveContainer>
             <Segment style={{ padding: '8em 0em' }} vertical>
                 <Grid container stackable verticalAlign='middle'>
-                    <Top10Volume>
-                    </Top10Volume>
+                    <TopCryptosBy />
                     <Grid.Row>
                         <Grid.Column width={8}>
                             <Header as='h3'>We Help Companies and Companions</Header>

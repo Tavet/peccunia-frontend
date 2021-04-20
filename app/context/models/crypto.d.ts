@@ -12,8 +12,12 @@ export interface FiatInfo {
     maxSupply: number
 }
 
+export interface CryptosAppState {
+    topMarketCap: CryptoState
+}
+
 export type CryptoState = {
-    cryptos: any,
+    cryptos: Crypto[],
     hasErrored: boolean,
     isLoading: boolean
 }
@@ -26,4 +30,4 @@ export type CryptoAction = {
     isLoading?: boolean
 }
 
-export type DispatchType = (args: CryptoAction) => CryptoAction
+export type DispatchType = (args: CryptoAction) => CryptosAppState

@@ -12,7 +12,6 @@ import {
     Visibility,
 } from 'semantic-ui-react'
 import styles from "./HomePage.module.scss"
-import Image from 'next/image'
 
 // Modules
 import ResponsiveNav from "../../modules/nav";

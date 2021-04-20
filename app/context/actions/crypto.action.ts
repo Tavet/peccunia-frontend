@@ -1,4 +1,4 @@
-import { CryptoAction, ICrypto } from "../models/crypto"
+import { CryptoAction, Crypto } from "../models/crypto"
 
 export const GET_TOP_CRYPTOS_LOADING = "GET_TOP_CRYPTOS_LOADING"
 export const GET_TOP_CRYPTOS_SUCCESS = "GET_TOP_CRYPTOS_SUCCESS"
@@ -18,7 +18,7 @@ export const cryptosIsLoading = (isLoading: boolean): CryptoAction => {
     };
 }
 
-export const cryptosFetchDataSuccess = (cryptos: ICrypto[]): CryptoAction => {
+export const cryptosFetchDataSuccess = (cryptos: Crypto[]): CryptoAction => {
     return {
         type: GET_TOP_CRYPTOS_SUCCESS,
         cryptos

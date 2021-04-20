@@ -4,13 +4,13 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { DispatchType as CryptoState } from './models/crypto'
 
 // Reducers
-import crypto from './reducer/crypto.reducer'
+import cryptos from './reducer/crypto.reducer'
 
 // States aka Dispatch Type
-export interface RootState {
-    crypto: CryptoState
+export interface AppState {
+    cryptos: CryptoState
 }
 
-export default createStore(combineReducers<RootState>({
-    crypto
+export default createStore(combineReducers<AppState>({
+    cryptos
 }), composeWithDevTools(applyMiddleware(thunk)))
