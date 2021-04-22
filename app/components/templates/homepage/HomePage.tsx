@@ -32,7 +32,7 @@ const DesktopContainer = ({ children }: { children: any }) => {
     const [fixed, setFixed] = useState(false)
 
     return (
-        <Media greaterThan='mobile'>
+        <Media greaterThan='mobile' className={styles.headerRow}>
             <Visibility
                 once={false}
                 onBottomPassed={() => setFixed(true)}
@@ -74,8 +74,7 @@ const HomepageHeading = ({ mobile = false }: { mobile?: boolean }) => (
                     </Button>
                 </Grid.Column>
                 {!mobile &&
-                    <Grid.Column><img src="/assets/vectors/home-header.svg" alt="Ilustración"
-                        className={styles.headerHomeIllustration} width="100%" height="auto" /></Grid.Column>
+                    <Grid.Column className={styles.headerHomeIllustration}><img src="/assets/vectors/home-header.svg" alt="Ilustración" /></Grid.Column>
                 }
             </Grid.Row>
         </Grid>

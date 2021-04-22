@@ -1,66 +1,43 @@
 // Redux
 import { connect } from 'react-redux';
 import { cryptosFetchData } from '../../../context/creators/crypto.creators'
-import { DispatchType as CryptoDispatchType } from '../../../context/models/crypto'
 import { AppState } from '../../../context/store';
 import { CryptosAppState } from '../../../context/models/crypto';
 
+// Modules
+import PlaceHolderError from "../placeholder-error"
+
 // Next.js
 import { useEffect } from 'react';
-
-// UI
-import { Grid, Placeholder, Segment, Header, Container } from 'semantic-ui-react'
-
 import { ThunkDispatch } from 'redux-thunk';
 
+// UI
+import { Grid, Placeholder, Container } from 'semantic-ui-react'
+import styles from "./Cryptos.module.scss"
+import "./Cryptos.module.scss"
+
 const PlaceHolderLoading = () => {
+
+    const cryptoItems = 5
+
+    const placeHolderList = []
+    for (var i = 0; i < cryptoItems; i++) {
+        placeHolderList.push(<Grid.Column>
+            <div className={styles.placeHolderFlex}>
+                <Placeholder inverted>
+                    <Placeholder.Header image>
+                        <Placeholder.Line />
+                        <Placeholder.Line />
+                    </Placeholder.Header>
+                </Placeholder>
+            </div>
+        </Grid.Column >)
+    }
     return (
-        <Container fluid><Grid columns={3} stackable>
-            <Grid.Column>
-                <Segment raised>
-                    <Placeholder>
-                        <Placeholder.Header image>
-                            <Placeholder.Line />
-                            <Placeholder.Line />
-                        </Placeholder.Header>
-                        <Placeholder.Paragraph>
-                            <Placeholder.Line length='medium' />
-                            <Placeholder.Line length='short' />
-                        </Placeholder.Paragraph>
-                    </Placeholder>
-                </Segment>
-            </Grid.Column>
-
-            <Grid.Column>
-                <Segment raised>
-                    <Placeholder>
-                        <Placeholder.Header image>
-                            <Placeholder.Line />
-                            <Placeholder.Line />
-                        </Placeholder.Header>
-                        <Placeholder.Paragraph>
-                            <Placeholder.Line length='medium' />
-                            <Placeholder.Line length='short' />
-                        </Placeholder.Paragraph>
-                    </Placeholder>
-                </Segment>
-            </Grid.Column>
-
-            <Grid.Column>
-                <Segment raised>
-                    <Placeholder>
-                        <Placeholder.Header image>
-                            <Placeholder.Line />
-                            <Placeholder.Line />
-                        </Placeholder.Header>
-                        <Placeholder.Paragraph>
-                            <Placeholder.Line length='medium' />
-                            <Placeholder.Line length='short' />
-                        </Placeholder.Paragraph>
-                    </Placeholder>
-                </Segment>
-            </Grid.Column>
-        </Grid>
+        <Container fluid>
+            <Grid columns={cryptoItems} stackable>
+                {placeHolderList}
+            </Grid>
         </Container>
     )
 }
@@ -71,10 +48,10 @@ const TopCryptosBy = ({ fetchData = () => { }, cryptos }: { fetchData?: () => vo
     }, [])
 
     return (
-        <>
+        <Container fluid className={styles.cryptosPlaceholder}>
             {cryptos.topMarketCap.isLoading && <PlaceHolderLoading />}
-            <Header as='h3' style={{ fontSize: '2em' }}>We Help Companies and Companions</Header>
-        </>
+            {cryptos.topMarketCap.hasErrored && <PlaceHolderError />}
+        </Container>
     )
 }
 

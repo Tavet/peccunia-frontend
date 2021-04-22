@@ -8,7 +8,13 @@
 
 .homepageHeading {
     margin-top: 60px;
-    height: calc(100%-60px);
+    height: calc(100% - 58px);
+    justify-content: center !important;
+    align-items: center !important;
+
+    > div {
+        height: calc(100% - 58px);
+    }
 }
 
 .headerHome {
@@ -21,21 +27,26 @@
     background-attachment: fixed;
 }
 
+.placeHolderFlex {
+    display: flex;
+}
+
+// Responsive
 .headerHomeIllustration {
+    display: flex !important;
+    justify-content: center;
+
     img {
-        width: 70% !important;
+        width: 73% !important;
     }
 }
 
 .headerHomePeccunia {
-    text-align: left !important;
+    text-align: right !important;
     padding: 0 3em 0 10% !important;
 }
 
 .headerHomeTitle {
-    display: flex;
-    align-items: center;
-
     img {
         height: 50px;
         width: auto;
@@ -59,7 +70,8 @@
 .headerHomeSubtitle {
     font-weight: normal !important;
     font-size: 1.7em !important;
-    text-align: left;
+    text-align: right;
+    margin-left: auto;
     color: $COLOR_GRAY !important;
 
     @include breakpoint(mobileonly) {
