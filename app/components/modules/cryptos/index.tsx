@@ -13,7 +13,6 @@ import { ThunkDispatch } from 'redux-thunk';
 
 // UI
 import { Grid, Placeholder, Container } from 'semantic-ui-react'
-import styles from "./Cryptos.module.scss"
 import "./Cryptos.module.scss"
 
 const PlaceHolderLoading = () => {
@@ -23,14 +22,12 @@ const PlaceHolderLoading = () => {
     const placeHolderList = []
     for (var i = 0; i < cryptoItems; i++) {
         placeHolderList.push(<Grid.Column>
-            <div className={styles.placeHolderFlex}>
-                <Placeholder inverted>
-                    <Placeholder.Header image>
-                        <Placeholder.Line />
-                        <Placeholder.Line />
-                    </Placeholder.Header>
-                </Placeholder>
-            </div>
+            <Placeholder inverted>
+                <Placeholder.Header image>
+                    <Placeholder.Line />
+                    <Placeholder.Line />
+                </Placeholder.Header>
+            </Placeholder>
         </Grid.Column >)
     }
     return (
@@ -48,7 +45,7 @@ const TopCryptosBy = ({ fetchData = () => { }, cryptos }: { fetchData?: () => vo
     }, [])
 
     return (
-        <Container fluid className={styles.cryptosPlaceholder}>
+        <Container fluid>
             {cryptos.topMarketCap.isLoading && <PlaceHolderLoading />}
             {cryptos.topMarketCap.hasErrored && <PlaceHolderError />}
         </Container>

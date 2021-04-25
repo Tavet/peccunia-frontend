@@ -54,23 +54,23 @@ const DesktopContainer = ({ children }: { children: any }) => {
 }
 
 const HomepageHeading = ({ mobile = false }: { mobile?: boolean }) => (
-    <Container fluid className={styles.homepageHeading}>
+    <Container className={styles.homepageHeading}>
         <Grid columns={2} stackable>
             <Grid.Row className={styles.headerRow}>
                 <Grid.Column className={styles.headerHomePeccunia}>
                     <div className={styles.headerHomeTitle}>
                         <Header
                             as='h1'
-                            content='Peccunia'
+                            content='Potencializa y planea tu portafolio de Criptomonedas'
                         />
                     </div>
                     <Header
-                        as='h2'
-                        content='Potencializa y planea tu portafolio de Criptomonedas'
+                        as='h3'
+                        content='Estamos desarrollando herramientas para potencializar tu salud financiera.'
                         className={styles.headerHomeSubtitle}
                     />
-                    <Button primary size='huge'>
-                        Planear ahora <Icon name='arrow right' />
+                    <Button primary size='medium'>
+                        Planear ahora <Icon name='arrow right' inverted />
                     </Button>
                 </Grid.Column>
                 {!mobile &&

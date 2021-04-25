@@ -5,7 +5,7 @@ import {
     Menu,
     Sidebar,
 } from 'semantic-ui-react'
-import styles from "./Nav.module.scss"
+import "./Nav.module.scss"
 
 const DesktopNav = ({ fixed }: { fixed: boolean }) => {
     return (
@@ -15,7 +15,7 @@ const DesktopNav = ({ fixed }: { fixed: boolean }) => {
             pointing={!fixed}
             secondary={!fixed}
             size='large'
-            className={`${!fixed ? styles.secondaryMenu : ""}`}
+            className={`${!fixed ? "secondary-menu" : ""}`}
         >
             <Container>
                 <Menu.Item as='a' active>
