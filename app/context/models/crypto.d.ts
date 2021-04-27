@@ -1,19 +1,19 @@
 export interface Crypto {
     name: string
     fullName: string
+    image: string
     fiatInfo: FiatInfo
 }
 
 export interface FiatInfo {
     price: number
-    volume24hour: number
-    marketCap: number
-    supply: number
-    maxSupply: number
+    price24hour: number
+    totalVolume: number
+    price24hourPercentage: number
 }
 
 export interface CryptosAppState {
-    topMarketCap: CryptoState
+    topVolume24h: CryptoState
 }
 
 export type CryptoState = {

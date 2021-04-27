@@ -5,7 +5,7 @@ import CryptoVolumeClient from "../../api/CryptoVolumeClient";
 export const cryptosFetchData = (): any => {
     return (dispatch: DispatchType) => {
         dispatch(actionTypes.cryptosIsLoading(true));
-        CryptoVolumeClient.getTopByMarketCap()
+        CryptoVolumeClient.getTopVolume24h()
             .then((response) => {
                 if (response.status != 200) {
                     throw Error(response.statusText);

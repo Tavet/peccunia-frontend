@@ -6,8 +6,9 @@
 }
 
 .homepageHeading {
-    margin-top: 60px;
+    margin: 80px;
     min-height: 50vh;
+    display: flex !important;
     justify-content: center !important;
     align-items: center !important;
 }
@@ -63,7 +64,7 @@
     font-size: 1.7em !important;
     text-align: right;
     margin-left: auto;
-    color: $COLOR_GRAY !important;
+    color: $COLOR_GRAY_3 !important;
     
     @include breakpoint(mobileonly) {
         font-size: 1.5em !important;

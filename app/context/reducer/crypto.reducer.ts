@@ -10,7 +10,7 @@ const initialState: CryptoState = {
     isLoading: false
 }
 
-const topMarketCap = (
+const topVolume24h = (
     state: CryptoState = initialState,
     action: CryptoAction
 ): CryptoState => {
@@ -36,5 +36,5 @@ const topMarketCap = (
 
 
 export default combineReducers<DispatchType>({
-    topMarketCap
+    topVolume24h
 })
