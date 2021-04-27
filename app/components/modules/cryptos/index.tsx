@@ -85,4 +85,5 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => {
     };
 };
 
+// @ts-ignore
 export default connect(mapStateToProps, mapDispatchToProps)(TopCryptosBy);

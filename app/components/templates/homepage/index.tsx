@@ -9,7 +9,6 @@ import {
     Divider,
     Grid,
     Header,
-    Image,
     Segment
 } from 'semantic-ui-react'
 
