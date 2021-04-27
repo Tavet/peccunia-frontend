@@ -1,5 +1,5 @@
 .maintenance-container {
-    padding: 2em 5em;
+    padding: 2em 1em;
     display: flex !important;
     justify-content: center;
     flex-direction: column;
@@ -7,7 +7,11 @@
     background-color: #27282c;
     height: 100vh !important;
 
-    :global(.ui.inverted.segment ) {
-        max-width: 80vw !important;
+    :global(.ui.inverted.segment) {
+        max-width: 95vw !important;
+    }
+
+    :global(.ui.container) {
+        margin: 0 i !important;
     }
 }
