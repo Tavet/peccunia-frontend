@@ -1,0 +1,83 @@
+@import "../../../styles/export.scss";
+
+.headerRow {
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.homepageHeading {
+    margin: 80px;
+    min-height: 50vh;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.headerHome {
+    color: rgba(255, 255, 255, 0.9);
+    min-height: 70%;
+    padding: "1em 0em";
+    background-color: #FAFAFA;
+}
+
+.placeHolderFlex {
+    display: flex;
+}
+
+// Responsive
+.headerHomeIllustration {
+    display: flex !important;
+    justify-content: center;
+
+    img {
+        width: 73% !important;
+    }
+}
+
+.headerHomePeccunia {
+    text-align: right !important;
+}
+
+.headerHomeTitle {
+    img {
+        height: 50px;
+        width: auto;
+        color: #fff;
+        svg {
+            fill: $COLOR_PRIMARY !important;
+        }
+    }
+
+    h1 {
+        color: $COLOR_DARK !important;
+        margin-top: 0 !important;
+        font-size: 3em !important;
+        
+        @include breakpoint(mobileonly) {
+            font-size: 2em !important;
+        }
+    }
+}
+
+.headerHomeSubtitle {
+    font-weight: normal !important;
+    font-size: 1.7em !important;
+    text-align: right;
+    margin-left: auto;
+    color: $COLOR_GRAY_3 !important;
+    
+    @include breakpoint(mobileonly) {
+        font-size: 1.5em !important;
+    }
+}
+
+.author {
+    font-size: 2.2rem;
+    font-weight: lighter;
+    letter-spacing: 0.05rem;
+    text-transform: lowercase;
+
+    a {
+        font-style: italic;
+    }
+}

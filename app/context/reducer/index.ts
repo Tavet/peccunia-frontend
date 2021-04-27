@@ -1,0 +1,1 @@
+export { default as CryptoReducer } from './crypto.reducer'

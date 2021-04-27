@@ -1,0 +1,27 @@
+@tailwind base;
+
+/* Write your own custom base styles here */
+@import "./base/base";
+@import "./base/typography";
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+
+.ui.button {
+    border-radius: 8px !important;
+}
+
+.ui.primary.button {
+    background-color: $COLOR_PRIMARY !important;
+}
+
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+/* Write you own custom component styles here */
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Your own custom utilities */

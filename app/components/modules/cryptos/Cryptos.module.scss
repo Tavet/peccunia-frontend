@@ -1,0 +1,43 @@
+@import "./../../../styles/export.scss";
+
+.cryptos-placeholder {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column;
+}
+
+.peccunia-top-home {
+    img {
+        height: 48px !important;
+        width: auto;
+        padding-right: 15px;
+    }
+
+    :global(div.column) {
+        display: flex !important;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    :global(.ui.header) {
+        margin: 0;
+        color: $COLOR_WHITE;
+    }
+
+    .coin-column {
+        cursor: pointer;
+        border-radius: 23px;
+        padding: 10px 25px !important;
+        @include transition(all, 0.2s, ease);
+
+        &:hover {
+            background-color: $COLOR_DARK_2;
+        }
+        .coin-price {
+            display: flex;
+            flex-direction: column;
+            color: $COLOR_GRAY !important;
+        }
+    }
+}
