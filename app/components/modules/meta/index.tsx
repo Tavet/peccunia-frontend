@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { CMS_NAME, HOME_OG_IMAGE_URL } from '../../../lib/constants'
+import { HOME_OG_IMAGE_URL } from '../../../lib/constants'
 import { GA_TRACKING_ID } from "../../../lib/gtags";
 
 const Meta = ({title}: { title: string }) => {
@@ -52,7 +52,7 @@ const Meta = ({title}: { title: string }) => {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
+        content={`Peccunia es un portal de Criptomonedas donde se encuentra información relevante y herramientas útiles para la planeación de un portafolio financiero.`}
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
       <title>{title}</title>
