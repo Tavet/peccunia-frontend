@@ -1,16 +1,18 @@
 // UI
 import { Header, Segment, List } from 'semantic-ui-react'
+import Meta from '../../modules/meta';
 import styles from "./Maintenance.module.scss"
 
 const Maintenance = () => {
 
     return (<div className={styles['maintenance-container']}>
+        <Meta title ="Peccunia - ¡MUY PRONTO!"/>
         <Segment inverted>
             <Header as='h1' inverted>Peccunia.</Header>
-            <p style={{color: "#FAFAFA"}}>Estamos trabajando en una herramienta para brindarte los mejores datos de <b style={{ color: "#FAFAFA" }}>Criptomonedas.</b></p><br />
-            <p style={{color: "#FAFAFA"}}>Nuestro propósito es crear la herramienta #1 para que encuentres lo más relevante de las monedas digitales.</p>
-            <br/>
-            <br/>
+            <p style={{ color: "#FAFAFA" }}>Estamos trabajando en una herramienta para brindarte los mejores datos de <b style={{ color: "#FAFAFA" }}>Criptomonedas.</b></p><br />
+            <p style={{ color: "#FAFAFA" }}>Nuestro propósito es crear la herramienta #1 para que encuentres lo más relevante de las monedas digitales.</p>
+            <br />
+            <br />
             <List divided relaxed inverted>
                 <List.Item>
                     <List.Icon name='pencil alternate' size='large' verticalAlign='middle' inverted />
