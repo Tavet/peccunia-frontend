@@ -1,6 +1,7 @@
 // Modules
 import Footer from "../../modules/footer"
 import TopCryptosBy from "../../modules/cryptos"
+import Meta from "../../modules/meta";
 
 // UI
 import {
@@ -20,7 +21,8 @@ const HomePage = () => {
 
     return (
         <ResponsiveContainer>
-            <Segment style={{ padding: '1.5em 10%' }} vertical inverted>
+            <Meta title="Análisis Mercado de Criptomonedas | Peccunia" />
+            <Segment vertical inverted>
                 <TopCryptosBy />
             </Segment>
 

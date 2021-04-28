@@ -27,6 +27,7 @@ const DesktopNav = ({ fixed }: { fixed: boolean }) => {
                     <Button as='a' inverted={fixed}>
                         Mi perfil
                     </Button>
+                    <span className="peccunia-soon">¡Muy pronto!</span>
                 </Menu.Item>
             </Container>
         </Menu>

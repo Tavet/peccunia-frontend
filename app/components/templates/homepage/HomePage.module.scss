@@ -1,23 +1,21 @@
 @import "../../../styles/export.scss";
 
-.headerRow {
-    justify-content: center !important;
-    align-items: center !important;
-}
-
 .homepageHeading {
     margin: 80px;
     min-height: 50vh;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
+    @include breakpoint(phablet) {
+        margin: 0;
+    }
 }
 
 .headerHome {
     color: rgba(255, 255, 255, 0.9);
     min-height: 70%;
     padding: "1em 0em";
-    background-color: #FAFAFA;
+    background-color: #fafafa;
 }
 
 .placeHolderFlex {
@@ -25,49 +23,57 @@
 }
 
 // Responsive
-.headerHomeIllustration {
-    display: flex !important;
-    justify-content: center;
+.header-peccunia-row {
+    justify-content: center !important;
+    align-items: center !important;
+    .header-peccunia-right {
+        display: flex !important;
+        justify-content: center;
 
-    img {
-        width: 73% !important;
-    }
-}
-
-.headerHomePeccunia {
-    text-align: right !important;
-}
-
-.headerHomeTitle {
-    img {
-        height: 50px;
-        width: auto;
-        color: #fff;
-        svg {
-            fill: $COLOR_PRIMARY !important;
+        img {
+            width: 73% !important;
         }
     }
 
-    h1 {
-        color: $COLOR_DARK !important;
-        margin-top: 0 !important;
-        font-size: 3em !important;
-        
-        @include breakpoint(mobileonly) {
-            font-size: 2em !important;
+    .header-peccunia-left {
+        @include breakpoint(phablet) {
+            text-align: center;
         }
-    }
-}
 
-.headerHomeSubtitle {
-    font-weight: normal !important;
-    font-size: 1.7em !important;
-    text-align: right;
-    margin-left: auto;
-    color: $COLOR_GRAY_3 !important;
-    
-    @include breakpoint(mobileonly) {
-        font-size: 1.5em !important;
+        @include breakpoint(tablet) {
+            text-align: right;
+            margin-left: auto;
+        }
+
+        .header-subtitle {
+            font-weight: normal !important;
+            font-size: 1.7em !important;
+            color: $COLOR_GRAY_3 !important;
+
+            @include breakpoint(mobileonly) {
+                font-size: 1.5em !important;
+            }
+        }
+        .header-title {
+            img {
+                height: 50px;
+                width: auto;
+                color: #fff;
+                svg {
+                    fill: $COLOR_PRIMARY !important;
+                }
+            }
+
+            h1 {
+                color: $COLOR_DARK !important;
+                margin-top: 0 !important;
+                font-size: 3em !important;
+
+                @include breakpoint(mobileonly) {
+                    font-size: 2em !important;
+                }
+            }
+        }
     }
 }
 

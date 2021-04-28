@@ -1,6 +1,5 @@
 // Templates
-//import HomePage from '../app/components/templates/homepage'
-import Maintenance from '../app/components/templates/maintenance'
+import HomePage from '../app/components/templates/homepage'
 
 // Lib
 import { getAllPosts } from '../app/lib/api'
@@ -9,7 +8,7 @@ import { getAllPosts } from '../app/lib/api'
 
 export default function Index() {
   return (
-      <Maintenance />
+      <HomePage />
   )
 }
 

@@ -56,9 +56,9 @@ const DesktopContainer = ({ children }: { children: any }) => {
 const HomepageHeading = ({ mobile = false }: { mobile?: boolean }) => (
     <Container className={styles.homepageHeading}>
         <Grid columns={2} stackable>
-            <Grid.Row className={styles.headerRow}>
-                <Grid.Column className={styles.headerHomePeccunia}>
-                    <div className={styles.headerHomeTitle}>
+            <Grid.Row className={styles['header-peccunia-row']}>
+                <Grid.Column className={styles['header-peccunia-left']}>
+                    <div className={styles['header-title']}>
                         <Header
                             as='h1'
                             content='Potencializa y planea tu portafolio de Criptomonedas'
@@ -66,15 +66,15 @@ const HomepageHeading = ({ mobile = false }: { mobile?: boolean }) => (
                     </div>
                     <Header
                         as='h3'
-                        content='Estamos desarrollando herramientas para potencializar tu salud financiera.'
-                        className={styles.headerHomeSubtitle}
+                        content='Estamos desarrollando herramientas financieras para ti.'
+                        className={styles['header-subtitle']}
                     />
                     <Button primary size='medium'>
-                        Planear ahora <Icon name='arrow right' inverted />
+                        Proximamente <Icon name='arrow right' inverted />
                     </Button>
                 </Grid.Column>
                 {!mobile &&
-                    <Grid.Column className={styles.headerHomeIllustration}><img src="/assets/vectors/home-header.svg" alt="Ilustración" /></Grid.Column>
+                    <Grid.Column className={styles['header-peccunia-right']}><img src="/assets/vectors/home-header.svg" alt="Ilustración" /></Grid.Column>
                 }
             </Grid.Row>
         </Grid>
