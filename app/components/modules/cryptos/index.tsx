@@ -104,7 +104,7 @@ const TopCryptosBy = ({ fetchData = () => { }, cryptos }: { fetchData?: () => vo
                     {cryptos.topVolume24h.hasErrored && <PlaceHolderError />}
                     {!cryptos.topVolume24h.hasErrored && !cryptos.topVolume24h.isLoading &&
                         <Grid columns={cryptoItems} className={styles['peccunia-top-home']} container>
-                            {cryptos.topVolume24h.cryptos.map(crypto => <CryptoInfo key={crypto.name} crypto={crypto} />)}
+                            {cryptos.topVolume24h.cryptos.slice(0, cryptoItems).map(crypto => <CryptoInfo key={crypto.name} crypto={crypto} />)}
                         </Grid>
                     }
                 </Container>

@@ -21,7 +21,7 @@ const HomePage = () => {
 
     return (
         <ResponsiveContainer>
-            <Meta title="Análisis Mercado de Criptomonedas | Peccunia" />
+            <Meta title="Mercado de Criptomonedas, análisis, noticias | Peccunia" />
             <Segment vertical inverted>
                 <TopCryptosBy />
             </Segment>
